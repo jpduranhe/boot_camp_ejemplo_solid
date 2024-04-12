@@ -3,12 +3,11 @@ package solid.correcion.implementacion_o_correcta.impresion;
 import solid.Libro;
 import solid.correcion.Factura;
 
-public class FacturaImpresionConsola implements ImprimeFactura {
-	 private Factura factura;
-
-	    public FacturaImpresionConsola(Factura factura) {
-	        this.factura = factura;
-	    }
+public class FacturaImpresionConsola extends ImprimeFactura {
+	
+    public FacturaImpresionConsola(Factura factura) {
+    	super(factura) ;
+    }
 
 	    public void imprimir() {
 	    	

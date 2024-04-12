@@ -8,8 +8,8 @@ import static solid.correcion.ConstantesPrograma.IVA;
 import solid.Libro;
 import solid.correcion.DbLibro;
 import solid.correcion.Factura;
-import solid.correcion.implementacion_o_correcta.impresion.FacturaImpresionConsola;
-import solid.correcion.implementacion_o_correcta.persistencia.FacturaPersistenciaArchivo;
+import solid.correcion.implementacion_o_correcta.impresion.FacturaImpresionLaser;
+import solid.correcion.implementacion_o_correcta.persistencia.FacturaPersistenciaMysql;
 
 public class Runner {
 	
@@ -31,10 +31,10 @@ public class Runner {
 	private static void facturar(Libro libro,int cantidad,double descuento) {
 		
 		
-		Factura factura = new Factura(libro,1,descuento,IVA);
+		Factura factura = new Factura(libro,cantidad,descuento,IVA);
 		
-		FacturaImpresionConsola facturaImpresion = new FacturaImpresionConsola(factura);
-		FacturaPersistenciaArchivo facturaPersistencia =  new FacturaPersistenciaArchivo();
+		FacturaImpresionLaser facturaImpresion = new FacturaImpresionLaser(factura);
+		FacturaPersistenciaMysql facturaPersistencia =  new FacturaPersistenciaMysql();
 		facturaImpresion.imprimir();
 		
 		facturaPersistencia.guardar(factura);

@@ -29,12 +29,12 @@ public class Runner {
 	private static void facturar(Libro libro,int cantidad,double descuento) {
 		
 		
-		Factura factura = new Factura(libro,1,descuento,IVA);
+		Factura factura = new Factura(libro,cantidad,descuento,IVA);
 		
 		FacturaImpresion facturaImpresion= new FacturaImpresion(factura);
-		FacturaPersistencia facturaPersistencia= new FacturaPersistencia(factura);
 		facturaImpresion.imprimir();
 		
+		FacturaPersistencia facturaPersistencia= new FacturaPersistencia(factura);		
 		facturaPersistencia.guardarArchivo("Factura Libro:"+libro.getNombre());
 	}
 	

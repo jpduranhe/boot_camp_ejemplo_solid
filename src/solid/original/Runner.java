@@ -14,6 +14,7 @@ public class Runner {
 		
 		DbLibro objDbLibro= new DbLibro();
 		Libro[] listadoLibrosDisponibles=objDbLibro.librosDispobibles();
+		
 		Libro harryPotterI=listadoLibrosDisponibles[0];
 		Libro harryPotterII=listadoLibrosDisponibles[1];
 		Libro harryPotterIII=listadoLibrosDisponibles[2];
@@ -21,12 +22,11 @@ public class Runner {
 		facturar(harryPotterI,2,DESCUENTO10PORCIENTO);
 		facturar(harryPotterII,1,DESCUENTO20PORCIENTO);
 		facturar(harryPotterIII,3,DESCUENTO30PORCIENTO);
-		facturar(harryPotterIII,3,0);
 	}
 	
 	
 	private static void facturar(Libro libro,int cantidad,double descuento) {
-		Factura factura = new Factura(libro,1,descuento,IVA);
+		Factura factura = new Factura(libro,cantidad,descuento,IVA);
 		factura.imprimeFactura();
 		factura.guardarArchivo("Factura Libro:"+libro.getNombre());
 	}

@@ -33,7 +33,7 @@ public class Factura {
             System.out.println("Total: " + total);
 	}
 
-        public void guardarArchivo(String nombreArchivo) {
+    public void guardarArchivo(String nombreArchivo) {
         	System.out.println("Crea un archivo con el nombre "+nombreArchivo+".txt.") ;
 	}
 
